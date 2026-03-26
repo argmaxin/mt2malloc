@@ -12,6 +12,8 @@ It also relies on `mmap` and `munmap` exclusively as of now (Windows ports are W
 
 Much of the design was inspired from the [Maple Tree](https://docs.kernel.org/core-api/maple_tree.html) and [RCU](https://docs.kernel.org/RCU/index.html) of the Linux Kernel.
 
-The core representation choice was to combine slabs and extents inside a single structure indexed by a single tree for allocations. This is allows circumvention of multiple complex data-structures, and a better mechanism in terms of correctness. It naturally provides isolation of metadata from user-data, and keeps metadata-induced fragmentation negligible at the user level.
+The core representation choice was to combine slabs and extents inside a single structure indexed by a single tree for allocations. This is allows circumvention of multiple complex data-structures, and a better mechanism in terms of correctness. 
 
-mt2malloc is designed to be bounded and incremental. It also hopes of formal modelling in the near future!
+It naturally provides isolation of metadata from user-data, and keeps metadata-induced fragmentation negligible at the user level. It also allows interesting properties, such as the ability to free interior pointers and so on.
+
+mt2malloc is designed to be bounded and incremental in terms of cost. It also hopes of formal modelling in the near future!
