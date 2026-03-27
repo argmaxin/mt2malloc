@@ -4,7 +4,9 @@ MKFILE_PATH := $(abspath $(lastword $(MAKEFILE_LIST)))
 MKFILE_DIR := $(dir $(MKFILE_PATH))
 
 fmt:
-	git ls-files | xargs clang-format -i 
+	git ls-files '*.c' | xargs clang-format -i 
+	git ls-files '*.h' | xargs clang-format -i
+	cargo fmt
 
 gfmt:
 	git ls-files \
