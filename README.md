@@ -3,9 +3,9 @@
 
 mt2malloc is a drop-in libc's malloc replacement that comes with a powerful API that makes it NUMA-native.
 
-mt2malloc is licensed under Apache License, and written in ISO C11.
+mt2malloc is licensed under LGPLv2.1-or-later License, and written in ISO C11.
+mt2malloc operates under POSIX-assumptions (specifically POSIX.1-2008-or-later).
 
-mt2malloc operates under POSIX-assumptions (specifically POSIX.1-2008-or-later). 
 It also relies on `mmap` and `munmap` exclusively as of now (Windows ports are WIP). 
 
 # Design & Inspiration
